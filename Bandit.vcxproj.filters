@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Bandit">
+      <UniqueIdentifier>{0c1ed8a7-4a56-4870-961f-b42ae4774466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bandit\src">
+      <UniqueIdentifier>{5766df57-b47d-4a75-ab9d-3124386f7691}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bandit\test">
+      <UniqueIdentifier>{55c65133-575d-4dff-b774-27d957d77cf1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bandit\src\Application.cpp">
+      <Filter>Bandit\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Bandit\test\test.cpp">
+      <Filter>Bandit\test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bandit\src\Application.h">
+      <Filter>Bandit\src</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\src\Core.h">
+      <Filter>Bandit\src</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\test\test.h">
+      <Filter>Bandit\test</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\Bandit.h">
+      <Filter>Bandit</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\src\EntryPoint.h">
+      <Filter>Bandit\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
