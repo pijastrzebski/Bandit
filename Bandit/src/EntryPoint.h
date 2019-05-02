@@ -10,9 +10,9 @@ extern std::unique_ptr<Bandit::Application> Bandit::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	std::puts("Bandit Engine\n");
-
 	auto app = Bandit::CreateApplication();
+	app->GetCoreLogger()->warn("Initialize Core Logger!");
+	app->GetAppLogger()->info("Initialize Client Logger!");
 	app->Run();
 }
 

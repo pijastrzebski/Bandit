@@ -2,7 +2,8 @@
 
 namespace Bandit {
 
-	Application::Application()
+	Application::Application() :
+		m_logger(std::make_unique<Bandit::Logger>())
 	{
 	}
 
