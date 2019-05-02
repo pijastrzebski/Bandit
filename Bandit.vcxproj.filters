@@ -18,6 +18,9 @@
     <ClCompile Include="Bandit\test\test.cpp">
       <Filter>Bandit\test</Filter>
     </ClCompile>
+    <ClCompile Include="Bandit\src\Logger.cpp">
+      <Filter>Bandit\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bandit\src\Application.h">
@@ -33,6 +36,9 @@
       <Filter>Bandit</Filter>
     </ClInclude>
     <ClInclude Include="Bandit\src\EntryPoint.h">
+      <Filter>Bandit\src</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\src\Logger.h">
       <Filter>Bandit\src</Filter>
     </ClInclude>
   </ItemGroup>
