@@ -1,19 +1,28 @@
 #pragma once
 
+#include "bpch.h"
+#include "Core.h"
+
 namespace Bandit {
 
-	enum class EventType
+	struct BANDIT_API IEvent
 	{
+		enum EventType
+		{
+			//TODO: add more events
+			None = 0,
+			WindowClose,
+			KeyPressed, KeyReleased
+		};
+	
+		enum EventCategory
+		{
+			//TODO: impl
+		};
 
-	};
+		virtual EventType GetEventType() const = 0;
+		virtual std::string ToString() const = 0;
 
-	enum class EventCategory
-	{
-
-	};
-
-	struct IEvent
-	{
-
+		bool m_isHandled{};
 	};
 }

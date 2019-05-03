@@ -27,6 +27,15 @@
     <ClCompile Include="Bandit\bpch.cpp">
       <Filter>Bandit</Filter>
     </ClCompile>
+    <ClCompile Include="Bandit\src\EventDispatcher.cpp">
+      <Filter>Bandit\src\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Bandit\src\KeyPressedEvent.cpp">
+      <Filter>Bandit\src\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Bandit\src\WindowCloseEvent.cpp">
+      <Filter>Bandit\src\Events</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bandit\src\Application.h">
@@ -52,6 +61,18 @@
     </ClInclude>
     <ClInclude Include="Bandit\bpch.h">
       <Filter>Bandit</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\src\EventDispatcher.h">
+      <Filter>Bandit\src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\src\KeyPressedEvent.h">
+      <Filter>Bandit\src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\src\WindowCloseEvent.h">
+      <Filter>Bandit\src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\src\ApplicationEvents.h">
+      <Filter>Bandit\src\Events</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
