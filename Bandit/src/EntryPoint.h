@@ -1,8 +1,6 @@
 #pragma once
 
 #include "Application.h"
-#include <memory>
-#include <cstdlib>
 
 #ifdef BANDIT_PLATFORM_WIN
 

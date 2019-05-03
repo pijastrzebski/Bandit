@@ -1,3 +1,5 @@
+#include "bpch.h"
+
 #include "Application.h"
 
 namespace Bandit {

@@ -10,6 +10,9 @@
     <Filter Include="Bandit\test">
       <UniqueIdentifier>{55c65133-575d-4dff-b774-27d957d77cf1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Bandit\src\Events">
+      <UniqueIdentifier>{38401c99-8e5f-4fdd-bb16-410b249d27ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bandit\src\Application.cpp">
@@ -20,6 +23,9 @@
     </ClCompile>
     <ClCompile Include="Bandit\src\Logger.cpp">
       <Filter>Bandit\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Bandit\bpch.cpp">
+      <Filter>Bandit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +46,12 @@
     </ClInclude>
     <ClInclude Include="Bandit\src\Logger.h">
       <Filter>Bandit\src</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\src\IEvent.h">
+      <Filter>Bandit\src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\bpch.h">
+      <Filter>Bandit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

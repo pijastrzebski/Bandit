@@ -11,15 +11,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bandit\bpch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Bandit\src\Application.cpp" />
     <ClCompile Include="Bandit\src\Logger.cpp" />
     <ClCompile Include="Bandit\test\test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bandit\Bandit.h" />
+    <ClInclude Include="Bandit\bpch.h" />
     <ClInclude Include="Bandit\src\Application.h" />
     <ClInclude Include="Bandit\src\Core.h" />
     <ClInclude Include="Bandit\src\EntryPoint.h" />
+    <ClInclude Include="Bandit\src\IEvent.h" />
     <ClInclude Include="Bandit\src\Logger.h" />
     <ClInclude Include="Bandit\test\test.h" />
   </ItemGroup>
@@ -74,6 +80,8 @@
       <PreprocessorDefinitions>BANDIT_PLATFORM_WIN;BANDIT_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdParty\spdlog\include;$(SolutionDir)$(ProjectName)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CallingConvention>Cdecl</CallingConvention>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>bpch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -95,6 +103,8 @@
       <PreprocessorDefinitions>BANDIT_PLATFORM_WIN;BANDIT_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdParty\spdlog\include;$(SolutionDir)$(ProjectName)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CallingConvention>Cdecl</CallingConvention>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>bpch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

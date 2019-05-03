@@ -2,7 +2,6 @@
 
 #include "Core.h"
 #include "Logger.h"
-#include <memory>
 
 namespace Bandit 
 {

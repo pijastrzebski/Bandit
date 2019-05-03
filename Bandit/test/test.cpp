@@ -1,5 +1,5 @@
+#include "bpch.h"
 #include "test.h"
-#include <cstdio>
 
 namespace Bandit {
 
