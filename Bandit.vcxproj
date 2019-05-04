@@ -92,6 +92,7 @@
       <CallingConvention>Cdecl</CallingConvention>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>bpch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,6 +119,7 @@ xcopy /y $(ProjectDir)3rdParty\glfw\bin\lib-vc2019\glfw3.dll $(SolutionDir)bin\$
       <CallingConvention>Cdecl</CallingConvention>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>bpch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

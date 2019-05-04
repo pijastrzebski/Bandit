@@ -7,10 +7,9 @@
 namespace Bandit {
 
 	Application::Application() :
-		m_logger(std::make_unique<Bandit::Logger>())
+		m_logger(std::make_unique<Logger>()),
+		m_window(std::make_unique<WinWindow>())
 	{
-		GetCoreLogger()->warn("Initialize Core Logger!");
-		GetAppLogger()->info("Initialize Client Logger!");
 	}
 
 
@@ -20,7 +19,6 @@ namespace Bandit {
 
 	void Application::Run()
 	{
-		WinWindow window;
 		WindowCloseEvent e(800, 600);
 		GetAppLogger()->info(e.ToString()); 
 

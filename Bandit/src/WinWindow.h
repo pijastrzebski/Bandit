@@ -16,12 +16,32 @@ namespace Bandit {
 			Init();
 		}
 
+		~WinWindow()
+		{
+			if (m_window)
+			{
+				glfwDestroyWindow(m_window);
+			}
+		}
+
+		void OnUpdate()
+		{
+			glfwPollEvents();
+			glfwSwapBuffers(m_window);
+		}
+
 		void Init()
 		{
 			if (!glfwInit())
 			{
 				return;
 			}
+			m_window = glfwCreateWindow(m_width, m_height, m_title.c_str(), nullptr, nullptr);
+			glfwMakeContextCurrent(m_window);
+			glfwSetWindowUserPointer(m_window, nullptr);
+
+			// set sync on
+			glfwSwapInterval(1);
 		}
 
 		virtual std::unique_ptr<IWindow> Create() override
@@ -30,7 +50,7 @@ namespace Bandit {
 		}
 
 	private:
-		GLFWwindow* m_window;
+		GLFWwindow* m_window{};
 		EventCallback m_eventCallback;
 	};
 }

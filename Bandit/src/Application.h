@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Logger.h"
+#include "IWindow.h"
 
 namespace Bandit 
 {
@@ -18,7 +19,8 @@ namespace Bandit
 		auto GetAppLogger() const { return m_logger->m_appLogger; }
 
 	private:
-		std::unique_ptr<Bandit::Logger> m_logger;
+		std::unique_ptr<Logger> m_logger;
+		std::unique_ptr<IWindow> m_window;
 	};
 
 	// in client
