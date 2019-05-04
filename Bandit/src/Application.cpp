@@ -2,6 +2,7 @@
 
 #include "Application.h"
 #include "ApplicationEvents.h"
+#include "WinWindow.h"
 
 namespace Bandit {
 
@@ -19,6 +20,7 @@ namespace Bandit {
 
 	void Application::Run()
 	{
+		WinWindow window;
 		WindowCloseEvent e(800, 600);
 		GetAppLogger()->info(e.ToString()); 
 

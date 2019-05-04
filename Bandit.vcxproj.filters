@@ -13,6 +13,12 @@
     <Filter Include="Bandit\src\Events">
       <UniqueIdentifier>{38401c99-8e5f-4fdd-bb16-410b249d27ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Bandit\src\Platform">
+      <UniqueIdentifier>{6a3f4057-db03-4c04-b477-e25b50803e3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bandit\src\Platform\Win">
+      <UniqueIdentifier>{a0e24d1d-4d68-489e-be62-f6934cd578aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bandit\src\Application.cpp">
@@ -35,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="Bandit\src\WindowCloseEvent.cpp">
       <Filter>Bandit\src\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Bandit\src\WinWindow.cpp">
+      <Filter>Bandit\src\Platform\Win</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +82,12 @@
     </ClInclude>
     <ClInclude Include="Bandit\src\ApplicationEvents.h">
       <Filter>Bandit\src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\src\IWindow.h">
+      <Filter>Bandit\src</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandit\src\WinWindow.h">
+      <Filter>Bandit\src\Platform\Win</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

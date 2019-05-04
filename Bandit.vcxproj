@@ -20,6 +20,7 @@
     <ClCompile Include="Bandit\src\KeyPressedEvent.cpp" />
     <ClCompile Include="Bandit\src\Logger.cpp" />
     <ClCompile Include="Bandit\src\WindowCloseEvent.cpp" />
+    <ClCompile Include="Bandit\src\WinWindow.cpp" />
     <ClCompile Include="Bandit\test\test.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -33,7 +34,9 @@
     <ClInclude Include="Bandit\src\IEvent.h" />
     <ClInclude Include="Bandit\src\KeyPressedEvent.h" />
     <ClInclude Include="Bandit\src\Logger.h" />
+    <ClInclude Include="Bandit\src\IWindow.h" />
     <ClInclude Include="Bandit\src\WindowCloseEvent.h" />
+    <ClInclude Include="Bandit\src\WinWindow.h" />
     <ClInclude Include="Bandit\test\test.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -85,16 +88,19 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PreprocessorDefinitions>BANDIT_PLATFORM_WIN;BANDIT_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)3rdParty\spdlog\include;$(SolutionDir)$(ProjectName);$(SolutionDir)$(ProjectName)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)3rdParty\glfw\include;$(SolutionDir)3rdParty\spdlog\include;$(SolutionDir)$(ProjectName);$(SolutionDir)$(ProjectName)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CallingConvention>Cdecl</CallingConvention>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>bpch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>glfw3.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)3rdParty\glfw\bin\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y $(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName)\$(ProjectName).dll $(SolutionDir)bin\$(Platform)\$(Configuration)\Sandbox\</Command>
+      <Command>xcopy /y $(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName)\$(ProjectName).dll $(SolutionDir)bin\$(Platform)\$(Configuration)\Sandbox\
+xcopy /y $(ProjectDir)3rdParty\glfw\bin\lib-vc2019\glfw3.dll $(SolutionDir)bin\$(Platform)\$(Configuration)\Sandbox\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -108,7 +114,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PreprocessorDefinitions>BANDIT_PLATFORM_WIN;BANDIT_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)3rdParty\spdlog\include;$(SolutionDir)$(ProjectName);$(SolutionDir)$(ProjectName)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)3rdParty\glfw\include;$(SolutionDir)3rdParty\spdlog\include;$(SolutionDir)$(ProjectName);$(SolutionDir)$(ProjectName)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CallingConvention>Cdecl</CallingConvention>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>bpch.h</PrecompiledHeaderFile>
@@ -117,9 +123,12 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glfw3.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)3rdParty\glfw\bin\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y $(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName)\$(ProjectName).dll $(SolutionDir)bin\$(Platform)\$(Configuration)\Sandbox\</Command>
+      <Command>xcopy /y $(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName)\$(ProjectName).dll $(SolutionDir)bin\$(Platform)\$(Configuration)\Sandbox\
+xcopy /y $(ProjectDir)3rdParty\glfw\bin\lib-vc2019\glfw3.dll $(SolutionDir)bin\$(Platform)\$(Configuration)\Sandbox\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
