@@ -23,7 +23,7 @@ namespace Bandit {
 		
 		friend std::ostream& operator<<(std::ostream& os, const IEvent& c)
 		{
-			return os << "[my_type i=" << c.GetEventType() << "]";
+			return os << "[Event =" << c.ToString() << "]";
 		}
 
 		virtual EventType GetEventType() const = 0;

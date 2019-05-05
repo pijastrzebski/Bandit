@@ -1,5 +1,6 @@
 #pragma once
 #include "IEvent.h"
+#include "Logger.h"
 
 namespace Bandit {
 
@@ -16,7 +17,6 @@ namespace Bandit {
 	private:
 		unsigned int m_width;
 		unsigned int m_height;
-
 	};
 }
 

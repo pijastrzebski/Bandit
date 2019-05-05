@@ -2,15 +2,17 @@
 
 #include "Application.h"
 #include "ApplicationEvents.h"
+#include "EventDispatcher.h"
 #include "WinWindow.h"
 
 namespace Bandit {
 
 	Application::Application() :
 		m_logger(std::make_unique<Logger>()),
-		m_window(std::make_unique<WinWindow>())
+		m_window(std::make_unique<WinWindow>()),
+		m_running(true)
 	{
-		m_window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
+		m_window->SetEventCallback([this](IEvent& event) {this->OnEvent(event); });
 	}
 
 
@@ -20,14 +22,9 @@ namespace Bandit {
 
 	void Application::Run()
 	{
-		WindowCloseEvent e(800, 600);
-		GetAppLogger()->info(e.ToString()); 
-
-		//TODO: do something with this event
-
-
-		while (!glfwWindowShouldClose(m_window->GetGLFWWindow()))
+		while (m_running)
 		{
+			glClearColor(1, 0, 1, 1); // set pink window
 			glClear(GL_COLOR_BUFFER_BIT);
 			m_window->OnUpdate();
 		}
@@ -35,7 +32,16 @@ namespace Bandit {
 
 	void Application::OnEvent(IEvent& event)
 	{
+		EventDispatcher dispatcher(event);
+		dispatcher.Dispatch([&]() { return OnWindowClose(event); });
+
 		GetAppLogger()->info("{}", event);
+	}
+
+	bool Application::OnWindowClose(IEvent& event)
+	{
+		m_running = false;
+		return true;
 	}
 
 }

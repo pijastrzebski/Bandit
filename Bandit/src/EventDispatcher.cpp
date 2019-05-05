@@ -13,13 +13,11 @@ namespace Bandit {
 	{
 	}
 
-	bool EventDispatcher::Dispatch()
+	bool EventDispatcher::Dispatch(std::function<bool()> functor)
 	{
-		if (/*if event type is ok return*/true)
-		{
-			m_event.m_isHandled = /*return call result*/true;
-		}
-		return {};
+		//TODO: simplify the dispatcher
+		m_event.m_isHandled = functor();
+		return m_event.m_isHandled;		
 	}
 
 }
