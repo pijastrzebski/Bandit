@@ -3,6 +3,7 @@
 #include "IWindow.h"
 
 #include "bpch.h"
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
 namespace Bandit {
@@ -24,10 +25,10 @@ namespace Bandit {
 			}
 		}
 
-		void OnUpdate()
+		void OnUpdate() override
 		{
-			glfwPollEvents();
 			glfwSwapBuffers(m_window);
+			glfwPollEvents();
 		}
 
 		void Init()
@@ -42,12 +43,34 @@ namespace Bandit {
 
 			// set sync on
 			glfwSwapInterval(1);
+
+			// set callbacks
+			/*glfwSetWindowSizeCallback(m_window, [](GLFWwindow * window, int width, int height)
+				{
+					auto userData = glfwGetWindowUserPointer(window);
+
+
+				});*/
+			glfwSetWindowCloseCallback(m_window, [](GLFWwindow* window) 
+				{
+					auto userData = glfwGetWindowUserPointer(window);
+					WindowCloseEvent event;
+				});
+
 		}
 
 		virtual std::unique_ptr<IWindow> Create() override
 		{
 			return std::make_unique<WinWindow>();
 		}
+
+		virtual void SetEventCallback(EventCallback eventCallback) override
+		{
+			m_eventCallback = eventCallback;
+		}
+
+		virtual GLFWwindow* GetGLFWWindow() const { return m_window; }
+
 
 	private:
 		GLFWwindow* m_window{};

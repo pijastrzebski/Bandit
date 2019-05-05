@@ -2,6 +2,7 @@
 
 #include "bpch.h"
 #include "Core.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace Bandit {
 
@@ -19,6 +20,11 @@ namespace Bandit {
 		{
 			//TODO: impl
 		};
+		
+		friend std::ostream& operator<<(std::ostream& os, const IEvent& c)
+		{
+			return os << "[my_type i=" << c.GetEventType() << "]";
+		}
 
 		virtual EventType GetEventType() const = 0;
 		virtual std::string ToString() const = 0;

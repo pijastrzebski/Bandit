@@ -15,6 +15,9 @@ namespace Bandit
 		virtual ~Application();
 
 		void Run();
+
+		void OnEvent(IEvent& event);
+
 		auto GetCoreLogger() const { return m_logger->m_coreLogger; }
 		auto GetAppLogger() const { return m_logger->m_appLogger; }
 

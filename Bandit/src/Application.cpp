@@ -10,6 +10,7 @@ namespace Bandit {
 		m_logger(std::make_unique<Logger>()),
 		m_window(std::make_unique<WinWindow>())
 	{
+		m_window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
 	}
 
 
@@ -25,7 +26,17 @@ namespace Bandit {
 		//TODO: do something with this event
 
 
-		while (true);
+		while (!glfwWindowShouldClose(m_window->GetGLFWWindow()))
+		{
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_window->OnUpdate();
+		}
 	}
+
+	void Application::OnEvent(IEvent& event)
+	{
+		GetAppLogger()->info("{}", event);
+	}
+
 }
 

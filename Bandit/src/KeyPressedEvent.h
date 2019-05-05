@@ -3,7 +3,7 @@
 
 namespace Bandit {
 
-	class KeyPressedEvent : public IEvent
+	class BANDIT_API KeyPressedEvent : public IEvent
 	{
 	public:
 		KeyPressedEvent();

@@ -3,9 +3,10 @@
 
 namespace Bandit {
 
-	class WindowCloseEvent : public IEvent
+	class BANDIT_API WindowCloseEvent : public IEvent
 	{
 	public:
+		WindowCloseEvent() = default;
 		WindowCloseEvent(unsigned int width, unsigned int height);
 		virtual ~WindowCloseEvent();
 

@@ -5,8 +5,10 @@
 #include "Core.h"
 #include "IEvent.h"
 
-namespace Bandit {
+struct GLFWwindow;
 
+namespace Bandit {
+	
 	class BANDIT_API IWindow
 	{
 	public:
@@ -20,11 +22,15 @@ namespace Bandit {
 		~IWindow() {}
 
 		virtual std::unique_ptr<IWindow> Create() = 0;
+		virtual void SetEventCallback(EventCallback eventCallback) = 0;
+		virtual void OnUpdate() = 0;
+		virtual GLFWwindow* GetGLFWWindow() const = 0;
 
 	protected:
 		std::string m_title;
 		int m_width;
 		int m_height;
 	};
+
 
 }
