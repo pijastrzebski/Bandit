@@ -19,6 +19,7 @@ namespace Bandit {
 			m_title(title),
 			m_width(width),
 			m_height(height) {}
+
 		~IWindow() {}
 
 		virtual std::unique_ptr<IWindow> Create() = 0;
