@@ -33,13 +33,21 @@ namespace Bandit {
 	void Application::OnEvent(IEvent& event)
 	{
 		EventDispatcher dispatcher(event);
-		dispatcher.Dispatch([&]() { return OnWindowClose(event); });
+
+		switch (event.GetEventType())
+		{
+		case IEvent::EventType::WindowClose:
+			dispatcher.Dispatch([&]() { return OnWindowClose(); });
+			break;
+		default:
+			break;
+		}			
 
 		GetAppLogger()->info("{}", event);
 	}
 
-	bool Application::OnWindowClose(IEvent& event)
-	{
+	bool Application::OnWindowClose()
+{
 		m_running = false;
 		return true;
 	}

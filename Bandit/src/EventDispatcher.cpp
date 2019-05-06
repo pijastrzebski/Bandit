@@ -13,10 +13,9 @@ namespace Bandit {
 	{
 	}
 
-	bool EventDispatcher::Dispatch(std::function<bool()> functor)
+	bool EventDispatcher::Dispatch(std::function<bool()> handleEventCallback)
 	{
-		//TODO: simplify the dispatcher
-		m_event.m_isHandled = functor();
+		m_event.m_isHandled = handleEventCallback();		
 		return m_event.m_isHandled;		
 	}
 

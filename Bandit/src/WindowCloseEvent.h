@@ -1,3 +1,5 @@
+#pragma warning( disable: 4244 4251 ) // suppress spdlog compiler warnings 
+
 #pragma once
 #include "IEvent.h"
 #include "Logger.h"
@@ -13,7 +15,6 @@ namespace Bandit {
 
 		virtual EventType GetEventType() const override;
 		virtual std::string ToString() const override;
-
 	private:
 		unsigned int m_width;
 		unsigned int m_height;

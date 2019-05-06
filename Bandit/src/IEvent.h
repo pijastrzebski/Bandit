@@ -1,3 +1,5 @@
+#pragma warning( disable: 4244 4251 ) // suppress spdlog compiler warnings 
+
 #pragma once
 
 #include "bpch.h"
@@ -28,6 +30,8 @@ namespace Bandit {
 
 		virtual EventType GetEventType() const = 0;
 		virtual std::string ToString() const = 0;
+
+		std::function<bool()> m_justDoIt;
 
 		bool m_isHandled{};
 	};

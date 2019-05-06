@@ -1,3 +1,5 @@
+#pragma warning( disable: 4244 4251 ) // suppress spdlog compiler warnings 
+
 #pragma once
 
 #include "IEvent.h"
@@ -11,7 +13,7 @@ namespace Bandit {
 		EventDispatcher(IEvent& event);
 		virtual ~EventDispatcher();
 
-		bool Dispatch(std::function<bool()> functor);
+		bool Dispatch(std::function<bool()> handleEventCallback);
 
 	private:
 		IEvent& m_event;

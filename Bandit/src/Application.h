@@ -1,3 +1,5 @@
+#pragma warning( disable: 4244 4251 ) // suppress spdlog compiler warnings 
+
 #pragma once
 
 #include "Core.h"
@@ -7,7 +9,7 @@
 
 namespace Bandit 
 {
-	struct Logger;
+	class Logger;
 
 	class BANDIT_API Application
 	{
@@ -22,7 +24,7 @@ namespace Bandit
 		auto GetCoreLogger() const { return m_logger->m_coreLogger; }
 		auto GetAppLogger() const { return m_logger->m_appLogger; }
 
-		bool OnWindowClose(IEvent& event);
+		bool OnWindowClose();
 
 	private:
 		std::unique_ptr<Logger> m_logger;

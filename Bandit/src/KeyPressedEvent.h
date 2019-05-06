@@ -1,3 +1,5 @@
+#pragma warning( disable: 4244 4251 ) // suppress spdlog compiler warnings 
+
 #pragma once
 #include "IEvent.h"
 
